@@ -1,0 +1,31 @@
+version: '3'
+services:
+  # reverse-proxy:
+  #   image: traefik # The official Traefik docker image
+  #   container_name: reverse-proxy
+  #   command: --api --docker.exposedbydefault=false # Enables the web UI and tells Træfik to listen to docker, without exposing by default
+  #   ports:
+  #     - "80:80"     # The HTTP port
+  #     - "8080:8080" # The Web UI (enabled by --api)
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock # So that Traefik can listen to the Docker events
+  webapp:
+    build: .
+    image: dsuarezlogans/express-with-session
+    container_name: webapp
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - REDIS_URL=session
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+  redis:
+    image: redis:5.0.3-alpine
+    container_name: session
+    expose:
+      - 6379

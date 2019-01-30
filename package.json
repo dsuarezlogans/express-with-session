@@ -12,12 +12,6 @@
     "start": "node index.js",
     "dev": "PORT=3000 nodemon index.js"
   },
-  "keywords": [
-    "express",
-    "session",
-    "redis",
-    "mongo"
-  ],
   "author": "Danny Suarez",
   "license": "ISC",
   "dependencies": {
@@ -26,7 +20,9 @@
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
-    "redis": "^2.8.0"
+    "moment": "^2.24.0",
+    "redis": "^2.8.0",
+    "winston": "^3.1.0"
   },
   "devDependencies": {
     "eslint": "^5.12.1",
@@ -36,5 +32,11 @@
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-security": "^1.4.0",
     "nodemon": "^1.18.9"
-  }
+  },
+  "keywords": [
+    "express",
+    "session",
+    "redis",
+    "mongo"
+  ]
 }

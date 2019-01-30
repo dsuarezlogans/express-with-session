@@ -1,6 +1,7 @@
 const session = require('express-session');
 const redis = require('redis');
 const RedisStore = require('connect-redis')(session);
+const { logger } = require('../../config');
 
 const { REDIS_URL, REDIS_PORT } = process.env;
 const redisClient = redis.createClient({ host: REDIS_URL, port: REDIS_PORT });
@@ -11,8 +12,8 @@ const initRedisSession = () => session({
   resave: false,
   saveUninitialized: false
 });
-// TODO: change console.log for a logging tool
-redisClient.on('ready', () => console.log('connected to redis'));
-redisClient.on('error', err => console.error(err));
+
+redisClient.on('ready', () => logger.info('connected to redis'));
+redisClient.on('error', err => logger.error(err));
 
 module.exports = initRedisSession;

@@ -4,34 +4,34 @@
   "description": "A simple web app for practice session handling with redis and docker",
   "main": "index.js",
   "engines": {
-    "node": "10.15.0"
+    "node": "12.17.0"
   },
   "scripts": {
     "lint": "eslint ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
+    "start": "node src/app.js",
     "dev": "PORT=3000 nodemon index.js"
   },
   "author": "Danny Suarez",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "connect-redis": "^3.4.0",
-    "express": "^4.16.4",
-    "express-handlebars": "^3.0.0",
-    "express-session": "^1.15.6",
-    "moment": "^2.24.0",
-    "redis": "^2.8.0",
-    "winston": "^3.1.0"
+    "body-parser": "^1.19.0",
+    "connect-redis": "^4.0.4",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "express-session": "^1.17.1",
+    "moment": "^2.26.0",
+    "redis": "^3.0.2",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
-    "eslint": "^5.12.1",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-mocha": "^5.2.1",
-    "eslint-plugin-node": "^8.0.1",
+    "eslint": "^7.1.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-mocha": "^7.0.0",
+    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-security": "^1.4.0",
-    "nodemon": "^1.18.9"
+    "nodemon": "^2.0.4"
   },
   "keywords": [
     "express",
